@@ -1,0 +1,20 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "mongoose": "^6.2.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
