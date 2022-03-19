@@ -1,5 +1,4 @@
 const config = require(`${process.cwd()}\\settings\\config.json`);
-const serverSchema = require(`${process.cwd()}\\models\\servidor.js`);
 
 module.exports = async (client, message) => {
     if (!message.guild || !message.channel || message.author.bot) return;
