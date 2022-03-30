@@ -1,11 +1,24 @@
 const mongoose = require("mongoose");
 
 const coinSchema = new mongoose.Schema({
-    userid: String,
-    name: String,
-    target: Number,
-    threshold: Boolean,
-    reached: Boolean,
+    userId: {
+        type: String,
+        required: true,
+    },
+    name: {
+        type: String,
+        required: true,
+    },
+    target: {
+        type: Number,
+    },
+    threshold: {
+        type: Boolean,
+    },
+    reached: {
+        type: Boolean,
+        default: false,
+    }
 });
 
 coinSchema.set("toJSON", {
