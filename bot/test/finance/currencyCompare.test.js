@@ -1,4 +1,4 @@
-const currencyInfo = require(`${process.cwd()}/commands/finance/currencyInfo.js`)
+const currencyCompare = require(`${process.cwd()}/commands/finance/currencyCompare.js`)
 
 describe("Test del reminder", () => {
     const messageMock = {
@@ -7,8 +7,8 @@ describe("Test del reminder", () => {
 
     test("Faltan argumentos", () => {
         const args = [];
-        const expectedOutput = "No has puesto ninguna criptomoneda.";
-        currencyInfo.run(null, messageMock, args);
+        const expectedOutput = "No has introducido dos criptomonedas.";
+        currencyCompare.run(null, messageMock, args);
         expect(messageMock.reply).toHaveBeenCalledTimes(1);
         expect(messageMock.reply).toHaveBeenCalledWith(expectedOutput);
     })
