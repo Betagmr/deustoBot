@@ -33,4 +33,20 @@ coinRouter.delete('/:id', (request, response, next) => {
         .catch(error => next(error))
 })
 
+coinRouter.put('/:id', (request, response, next) => {
+    const body = request.body
+  
+    const coin = {
+        target: body.target,
+        threshold: body.threshold,
+        reached: body.reached
+    }
+  
+    Coin.findByIdAndUpdate(request.params.id, coin, { new: true })
+      .then(updatedCoin => {
+        response.json(updatedCoin)
+      })
+      .catch(error => next(error))
+  })
+
 module.exports = coinRouter
