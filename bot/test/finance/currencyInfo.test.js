@@ -1,6 +1,6 @@
 const currencyInfo = require(`${process.cwd()}/commands/finance/currencyInfo.js`)
 
-describe("Test del reminder", () => {
+describe("Test del currencyInfo", () => {
     const messageMock = {
         reply: jest.fn()
     }

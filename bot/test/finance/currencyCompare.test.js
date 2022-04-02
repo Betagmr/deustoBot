@@ -1,6 +1,6 @@
 const currencyCompare = require(`${process.cwd()}/commands/finance/currencyCompare.js`)
 
-describe("Test del reminder", () => {
+describe("Test del currencyCompare", () => {
     const messageMock = {
         reply: jest.fn()
     }
