@@ -14,6 +14,15 @@ const postReminder = async (reminder) =>{
     }
 }
 
+const getReminders = async (userId) =>{
+    const res = await axios({
+        method: 'GET',
+        url: 'http://localhost:3001/api/reminder'
+    })
+    return res.data.filter(el => el.userId.includes(userId))
+}
+
 module.exports = {
-    postReminder: postReminder
+    postReminder: postReminder,
+    getReminders: getReminders
 }
