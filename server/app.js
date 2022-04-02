@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(middleware.requestLogger);
 
 app.use("/api/reminder", reminderRouter);
-app.use("/api/coin", coinRouter);
+app.use("/api/coins", coinRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);

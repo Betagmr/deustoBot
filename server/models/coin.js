@@ -8,17 +8,19 @@ const coinSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-    },
-    target: {
-        type: Number,
-    },
-    threshold: {
-        type: Boolean,
-    },
-    reached: {
-        type: Boolean,
-        default: false,
-    }
+    }//,
+    // tarjet: {
+    //     type: Number,
+    //     default: 0
+    // },
+    // threshold: {
+    //     type: Boolean,
+    //     default: false
+    // },
+    // reached: {
+    //     type: Boolean,
+    //     default: false,
+    // }
 });
 
 coinSchema.set("toJSON", {

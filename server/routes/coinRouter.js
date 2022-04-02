@@ -13,9 +13,9 @@ coinRouter.post('/', (request, response, next) => {
     const coin = new Coin({
         userId: body.userId,
         name: body.name,
-        target: body.target,
-        threshold: body.threshold,
-        reached: body.reached
+        // target: body.target,
+        // threshold: body.threshold,
+        // reached: body.reached
     })
 
     coin.save()
