@@ -10,7 +10,7 @@ module.exports = {
         const currency = await coinservices.getCriptoCurrency(args[0].toLowerCase());
         const list = await coinservices.getCriptoList(message.author.id)
         const coinTarjet = list.find(c => c.name = args[0])
-        console.log(coinTarjet)
+        if(!coinTarjet)return message.reply("La criptomoneda no está incluida en la lista.")
         const id = coinTarjet.id
         currency
             ? message.channel.send({ embeds: [coinTemplate(currency)] })
