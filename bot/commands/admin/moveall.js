@@ -11,11 +11,10 @@ module.exports = {
      * 
     */
     run: async (client, message, args) => {
-        if(args.length < 1) return message.reply("No has introducido ningun canal")
+        if (args.length < 1) return message.reply("No has introducido ningun canal")
 
-        const guild = client.guilds.cache.get('669565700049993740');
+        const guild = client.guilds.cache.get(message.guildId);
         const fillChannels = client.channels.cache.filter(c => c.isVoice()).filter(c => c.members.size);
-        
         const targetChannel = client.channels.cache.find(channel => channel.name.toLowerCase().includes(args[0].toLowerCase()));
         const usersId = []
 
@@ -29,7 +28,7 @@ module.exports = {
         discordUser.forEach(member => {
             member.voice.setChannel(targetChannel)
         });
-        
+
         message.reply(`**${usersId.length}** usuarios han sido movidos a la sala ${targetChannel}`)
     }
 }

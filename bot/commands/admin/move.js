@@ -16,7 +16,7 @@ module.exports = {
         const targetChannel = client.channels.cache.find(channel => channel.name.toLowerCase().includes(args[0].toLowerCase()));
         if (!targetChannel) return message.reply("No has introducido un canal valido")
 
-        const guild = client.guilds.cache.get('669565700049993740');
+        const guild = client.guilds.cache.get(message.guildId);
         const usersId = message.mentions.users.map(user => user.id)
         const discordUser = guild.members.cache.filter(member => usersId.includes(member.id));
         discordUser.forEach(member => {
