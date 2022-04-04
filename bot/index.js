@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const config = require('./settings/config.json');
+const config = require("./settings/config");
 require('colors');
 
 const client = new Discord.Client({
@@ -27,4 +27,4 @@ function requerirhandlers() {
 
 requerirhandlers();
 
-client.login(config.token)
+client.login(config.TOKEN)

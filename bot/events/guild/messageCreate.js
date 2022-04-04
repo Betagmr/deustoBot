@@ -1,9 +1,9 @@
-const config = require(`${process.cwd()}\\settings\\config.json`);
+const config = require(`${process.cwd()}/settings/config`);
 
 module.exports = async (client, message) => {
     if (!message.guild || !message.channel || message.author.bot) return;
-    if (!message.content.startsWith(config.prefix)) return;
-    const args = message.content.slice(config.prefix.length).trim().split(" ");
+    if (!message.content.startsWith(config.PREFIX)) return;
+    const args = message.content.slice(config.PREFIX.length).trim().split(" ");
     const cmd = args.shift()?.toLowerCase();
     const command = client.commands.get(cmd) || client.commands.find(c => c.aliases && c.aliases.includes(cmd));
 
