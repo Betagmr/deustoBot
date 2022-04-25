@@ -9,7 +9,8 @@ const mongoose = require("mongoose");
 
 const helpRouter = require("./routes/helpController");
 const reminderRouter = require("./routes/reminderController");
-const coinRouter = require("./routes/coinCotroller");
+const coinRouter = require("./routes/coinController");
+const gamblingRouter = require("./routes/gamblingController");
 
 // Database conection
 mongoose
@@ -25,6 +26,7 @@ app.use(middleware.requestLogger);
 app.use("/", helpRouter);
 app.use(config.ROUTES.remainder_url, reminderRouter);
 app.use(config.ROUTES.coin_url, coinRouter);
+app.use(config.ROUTES.gambling_url, gamblingRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
