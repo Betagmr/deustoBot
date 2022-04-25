@@ -7,9 +7,9 @@ const logger = require("./utils/logger");
 const middleware = require("./utils/middleware");
 const mongoose = require("mongoose");
 
-const helpRouter = require("./routes/helpRouter");
-const reminderRouter = require("./routes/reminderRouter");
-const coinRouter = require("./routes/coinRouter");
+const helpRouter = require("./routes/helpController");
+const reminderRouter = require("./routes/reminderController");
+const coinRouter = require("./routes/coinCotroller");
 
 // Database conection
 mongoose
