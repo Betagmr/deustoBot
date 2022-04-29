@@ -33,15 +33,15 @@ gamblingRouter.delete('/:id', (request, response, next) => {
 gamblingRouter.put('/:id', (request, response, next) => {
     const body = request.body
   
-    const gambling = {
-        coins: body.coins
-    }
-  
-    Gambling.findByIdAndUpdate(request.params.id, gambling, { new: true })
-      .then(updatedGambling => {
+    const filter = { userId: request.params.id }
+
+    const update = { coins: body.coins }
+
+    Gambling.findOneAndUpdate(filter, update, {new: true})
+    .then(updatedGambling => {
         response.json(updatedGambling)
-      })
-      .catch(error => next(error))
-  })
+    })
+    .catch(error => next(error))
+})
 
 module.exports = gamblingRouter
