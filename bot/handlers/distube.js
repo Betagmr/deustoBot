@@ -1,4 +1,4 @@
-const { DisTube } = require('distube')
+const { DisTube } = require('distube');
 
 module.exports = (client) => {
   client.distube = new DisTube(client, {
@@ -19,10 +19,10 @@ module.exports = (client) => {
       dlChunkSize: 1024 * 1024 * 4,
     },
     youtubeDL: false,
-  })
+  });
 
   client.distube.on('initQueue', queue => {
     queue.autoplay = true;
-  })
+  });
 
-}
+};

@@ -2,14 +2,14 @@ const { MessageEmbed } = require('discord.js');
 
 // inside a command, event listener, etc.
 
-const myRemindersTemplate = (reminders) =>{
-    const embed = new MessageEmbed()
+const myRemindersTemplate = (reminders) => {
+  const embed = new MessageEmbed()
     .setColor('#fcba03')
-	.setTitle("***Recordatorios:***")
+    .setTitle('***Recordatorios:***')
     .setDescription(reminders)
-	.setTimestamp()
-	
-    return embed
-}
+    .setTimestamp();
 
-module.exports = myRemindersTemplate
+  return embed;
+};
+
+module.exports = myRemindersTemplate;
