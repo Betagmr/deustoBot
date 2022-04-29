@@ -6,7 +6,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node .",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "test": "cross-env NODE_ENV=test jest --verbose --runInBand --forceExit"
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand --forceExit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "author": "",
   "license": "ISC",
@@ -17,8 +19,9 @@
     "mongoose": "^6.2.5"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "colors": "^1.4.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.14.0",
     "jest": "^27.5.1",
     "nodemon": "^2.0.15"
   }
