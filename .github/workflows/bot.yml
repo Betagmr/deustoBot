@@ -1,0 +1,29 @@
+name: Bot CI
+
+on:
+  push:
+    branches: 
+      - dev
+    paths:
+      - 'bot/**'
+
+jobs:
+  bot_test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js v16.14.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.14.0'
+      - name: Installing dependencies
+        run: npm install
+        working-directory: "./bot"
+      - name: Run ESLint
+        run: npm run lint
+        working-directory: "./bot"
+      - name: Running test
+        run: npm run test
+        working-directory: "./bot"

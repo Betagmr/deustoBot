@@ -1,0 +1,29 @@
+name: Server CI
+
+on:
+  push:
+    branches: 
+      - dev
+    paths:
+      - 'server/**'
+
+jobs:
+  server_test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js v16.14.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.14.0'
+      - name: Installing dependencies
+        run: npm install
+        working-directory: "./server"
+      - name: Run ESLint
+        run: npm run lint
+        working-directory: "./server"
+      - name: Running test
+        run: npm run test
+        working-directory: "./server"
