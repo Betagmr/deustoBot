@@ -9,7 +9,8 @@ const MONGODB_URI = process.env.NODE_ENV === 'development' || process.env.NODE_E
 const ROUTES = {
   remainder_url: '/api/reminder',
   coin_url: '/api/coin',
-  gambling_url: '/api/gambling'
+  gambling_url: '/api/gambling',
+  checklist_url: '/api/checklist'
 };
 
 module.exports = {
