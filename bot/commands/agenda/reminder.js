@@ -1,4 +1,4 @@
-const reminderService = require(`${process.cwd()}/services/agendaService.js`);
+const reminderService = require('../../services/agendaService.js');
 
 module.exports = {
   name: 'reminder',

@@ -1,5 +1,5 @@
-const reminderService = require(`${process.cwd()}/services/agendaService.js`);
-const myRemindersTemplate = require(`${process.cwd()}/templates/myRemindersTemplate.js`);
+const reminderService = require('../../services/agendaService.js');
+const myRemindersTemplate = require('../../templates/myRemindersTemplate.js');
 
 const recordStringer = (recordList) => {
   let string = '';
