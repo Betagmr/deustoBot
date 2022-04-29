@@ -16,7 +16,7 @@ client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 
 function requerirhandlers() {
-    ["command", "events"].forEach(handler => {
+    ["command", "events", "distube"].forEach(handler => {
         try {
             require(`./handlers/${handler}`)(client, Discord)
         } catch (e) {
