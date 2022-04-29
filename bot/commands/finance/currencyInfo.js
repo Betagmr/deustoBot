@@ -1,5 +1,5 @@
-const coinservices = require(`${process.cwd()}/services/coinservices.js`);
-const coinTemplate = require(`${process.cwd()}/templates/coinTemplate.js`);
+const coinservices = require('../../services/coinservices.js');
+const coinTemplate = require('../../templates/coinTemplate.js');
 
 module.exports = {
   name: 'currency',
