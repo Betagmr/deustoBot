@@ -13,6 +13,7 @@ gamblingRouter.post('/', (request, response, next) => {
     const gambling = new Gambling({
         userId: body.userId,
         coins: body.coins,
+        reward: body.reward,
     })
 
     gambling.save()
@@ -35,7 +36,7 @@ gamblingRouter.put('/:id', (request, response, next) => {
   
     const filter = { userId: request.params.id }
 
-    const update = { coins: body.coins }
+    const update = { coins: body.coins, reward: body.reward }
 
     Gambling.findOneAndUpdate(filter, update, {new: true})
     .then(updatedGambling => {

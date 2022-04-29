@@ -8,6 +8,10 @@ const gamblingSchema = new mongoose.Schema({
     coins: {
         type: Number,
         default: 0,
+    },
+    reward: {
+        type: Boolean,
+        default: false,
     }
 });
 
