@@ -1,4 +1,4 @@
-require("colors");
+require('colors');
 
 const info = (...params) => {
   console.log(...params);

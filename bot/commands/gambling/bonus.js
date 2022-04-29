@@ -27,7 +27,7 @@ module.exports = {
         if (rewarded) message.reply('Tienes que esperar hasta las 0:0:0 para solicitar de nuevo el bonus.');
         if (!rewarded) {
             const userData = await gamblingService.getGamblingPlayer(userId);
-            const coins = userData.coins + 1000;
+            const coins = userData.coins + bonus;
             await gamblingService.updateUserCoins({userId, coins})
             await gamblingService.updateUserReward({userId, reward})
             message.reply(`Has recibido el bonus de ${bonus} monedas.`)
