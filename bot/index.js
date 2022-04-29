@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const cronUtil = require('./utils/cron');
 const config = require("./settings/config");
 require('colors');
 
@@ -26,5 +27,6 @@ function requerirhandlers() {
 }
 
 requerirhandlers();
+cronUtil.resetRewardJob.start()
 
 client.login(config.TOKEN)
