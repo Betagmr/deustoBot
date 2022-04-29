@@ -1,4 +1,4 @@
-const deleteCurrency = require(`${process.cwd()}/commands/finance/deleteCurrency.js`);
+const deleteCurrency = require('../../commands/finance/deleteCurrency.js');
 
 describe('Test del currencyInfo', () => {
   const messageMock = {

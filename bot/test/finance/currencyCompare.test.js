@@ -1,4 +1,4 @@
-const currencyCompare = require(`${process.cwd()}/commands/finance/currencyCompare.js`);
+const currencyCompare = require('../../commands/finance/currencyCompare.js');
 
 describe('Test del currencyCompare', () => {
   const messageMock = {

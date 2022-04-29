@@ -1,4 +1,4 @@
-const moveall = require(`${process.cwd()}/commands/admin/moveall.js`);
+const moveall = require('../../commands/admin/moveall.js');
 
 describe('Test del moveall', () => {
   const messageMock = {

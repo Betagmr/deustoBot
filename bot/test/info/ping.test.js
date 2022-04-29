@@ -1,4 +1,4 @@
-const ping = require(`${process.cwd()}/commands/info/ping`);
+const ping = require('../../commands/info/ping');
 
 describe('Test del comando ping', () => {
   const clientMock = {

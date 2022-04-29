@@ -1,4 +1,4 @@
-const reminder = require(`${process.cwd()}/commands/agenda/reminder`);
+const reminder = require('../../commands/agenda/reminder');
 
 describe('Test del reminder', () => {
   const messageMock = {

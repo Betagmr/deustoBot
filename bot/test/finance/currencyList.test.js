@@ -1,4 +1,4 @@
-const currencyList = require(`${process.cwd()}/commands/finance/currencyList.js`);
+const currencyList = require('../../commands/finance/currencyList.js');
 
 describe('Test del currencyInfo', () => {
   const messageMock = {
