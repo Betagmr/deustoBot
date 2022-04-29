@@ -29,7 +29,7 @@ const reward = async ({userId, coins}, bet, betCoins, win) => {
 
 const ensureUser = async (userId) => {
     const data = await gamblingService.getGamblingPlayer(userId)
-    if (!data) await gamblingService.postNewPlayer({userId})
+    if (!data) await gamblingService.postNewPlayer(userId)
 }
 
 

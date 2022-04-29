@@ -20,14 +20,22 @@ const getGamblingPlayers = async () =>{
     return res.data
 }
 
-const postNewPlayer = async ({userId, coins = 0}) =>{
+const getRewardedPlayers = async () =>{
+    const res = await axios({
+        method: 'GET',
+        url: base_url
+    })
+
+    return res.data.filter(el => el.reward === true)
+}
+
+const postNewPlayer = async (userId) =>{
     try{
         await axios({
             method: 'POST',
             url: base_url,
             data: {
-                userId,
-                coins
+                userId
             }
         })
     }catch(e){
@@ -37,11 +45,26 @@ const postNewPlayer = async ({userId, coins = 0}) =>{
 
 const updateUserCoins = async ({userId, coins}) =>{
     try{
+        console.log(coins);
         await axios({
             method: 'PUT',
-            url: base_url + `/` + userId,
+            url: `${base_url}/${userId}`,
             data: {
-                coins
+                coins,
+            }
+        })
+    }catch(e){
+        console.log(e);
+    }
+}
+
+const updateUserReward = async ({userId, reward}) =>{
+    try{
+        await axios({
+            method: 'PUT',
+            url: `${base_url}/${userId}`,
+            data: {
+                reward,
             }
         })
     }catch(e){
@@ -53,6 +76,8 @@ const updateUserCoins = async ({userId, coins}) =>{
 module.exports = {
     getGamblingPlayer,
     getGamblingPlayers,
+    getRewardedPlayers,
     postNewPlayer,
-    updateUserCoins
+    updateUserCoins,
+    updateUserReward
 }
