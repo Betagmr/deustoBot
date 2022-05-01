@@ -1,5 +1,5 @@
 const gamblingService = require('../../services/gamblingService');
-const coinTemplate = require(`${process.cwd()}/templates/coinTemplate.js`);
+const betTemplate = require('../../templates/betTemplate');
 const game = require('../../handlers/game');
 const { Client, Message } = require('discord.js');
 
@@ -35,11 +35,10 @@ module.exports = {
       };
       await game.reward(player, bet, betCoins, solution);
       const newBalance = await gamblingService.getGamblingPlayer(userId);
-      solution ? message.reply(`Felicidades, ahora tienes ${newBalance.coins}`) :
-        message.reply(`Vaya...lo siento, has perdido, ahora tienes ${newBalance.coins}`);
-
+      solution ? message.channel.send({ embeds: [betTemplate('¡Ganaste!', `Ahora tienes ${newBalance.coins}`)] }) :
+        message.channel.send({ embeds: [betTemplate('Perdiste..',`Ahora tienes ${newBalance.coins}`)] });
     } else {
-      return message.reply('No tienes monedas suficientes.');
+      return message.channel.send({ embeds: [betTemplate('No tienes monedas suficientes.')] });
     }
   }
 };

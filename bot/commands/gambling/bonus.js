@@ -1,6 +1,7 @@
 const { Client, Message } = require('discord.js');
 const game = require('../../handlers/game');
 const gamblingService = require('../../services/gamblingService');
+const bonusTemplate = require('../../templates/bonusTemplate');
 
 
 const reward = true;
@@ -23,14 +24,13 @@ module.exports = {
 
     const rewardedPlayers = await gamblingService.getRewardedPlayers();
     const rewarded = rewardedPlayers.find(el => el.userId.includes(userId));
-
-    if (rewarded) message.reply('Tienes que esperar hasta las 0:0:0 para solicitar de nuevo el bonus.');
+    if (rewarded) message.channel.send({ embeds: [bonusTemplate('Tienes que esperar hasta las 0:0:0 para solicitar de nuevo el bonus.')] });
     if (!rewarded) {
       const userData = await gamblingService.getGamblingPlayer(userId);
       const coins = userData.coins + bonus;
       await gamblingService.updateUserCoins({ userId, coins });
       await gamblingService.updateUserReward({ userId, reward });
-      message.reply(`Has recibido el bonus de ${bonus} monedas.`);
+      message.channel.send({ embeds: [bonusTemplate(`Se han añadido 1000 monedas, ahora tienes ${coins} monedas.`)] });
     }
   }
 };

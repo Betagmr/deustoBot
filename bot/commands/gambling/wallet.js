@@ -1,6 +1,7 @@
 const { Client, Message } = require('discord.js');
 const game = require('../../handlers/game');
 const gamblingService = require('../../services/gamblingService');
+const walletTemplate = require('../../templates/walletTemplate');
 
 module.exports = {
   name: 'wallet',
@@ -17,6 +18,6 @@ module.exports = {
     await game.ensureUser(userId);
 
     const userData = await gamblingService.getGamblingPlayer(userId);
-    message.reply(`Tienes ${userData.coins} monedas para apostar.`);
+    message.channel.send({ embeds: [walletTemplate(`Tienes: ${userData.coins} monedas.`)] });
   }
 };
