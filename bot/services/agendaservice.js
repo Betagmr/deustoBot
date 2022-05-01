@@ -8,7 +8,6 @@ const postReminder = async (reminder) => {
       data: reminder
 
     });
-    console.log('se ha enviado el objeto correctamente');
   } catch(error) {
     console.log(error);
   }
@@ -30,7 +29,6 @@ const postChecklist = async (checklist) => {
       data: checklist
 
     });
-    console.log('se ha enviado el objeto correctamente');
   } catch(error) {
     console.log(error);
   }
@@ -50,7 +48,6 @@ const putChecklist = async (id, checklistElement) => {
     url: 'http://localhost:3001/api/checklist/' + id,
     data: checklistElement
   });
-  console.log('se ha actualizado el objeto correctamente');
   return res;
 };
 
@@ -60,7 +57,6 @@ const deleteChecklist = async (id) => {
       method: 'DELETE',
       url: 'http://localhost:3001/api/checklist/' + id,
     });
-    console.log('realizada peticion DELETE');
   }catch(e){
     console.log(e);
   }

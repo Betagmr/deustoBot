@@ -1,4 +1,4 @@
-const cronUtil = require('./utils/cron');
+const cronUtil = require('../../utils/cron');
 
 module.exports = client => {
   console.log(`Sesion iniciada en ${client.user.tag}`.green);

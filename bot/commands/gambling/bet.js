@@ -15,11 +15,14 @@ module.exports = {
      */
 
   run: async (client, message, args) => {
-    if (args.length < 1) return message.reply('No has introducido ningún valor, ni apuesta a ejecutar.');
-    if (args.length < 2) return message.reply('Selecciona la apuesta indicando: Up, Mid o Down.');
+    if (args.length < 1) return message.reply('❌ No has introducido ningún valor, ni apuesta a ejecutar.');
+    if (args.length < 2) return message.reply('❌ Selecciona la apuesta indicando: Up, Mid o Down.');
+
+    if (isNaN(args[0])) return message.reply('❌ No has introducido un numero de monedas valido.');
+    if (!['up', 'down', 'mid'].includes(args[1])) return message.reply('❌ No has intrudocido una apuesta valida.');
 
     const bet = args[1];
-    const betCoins = args[0];
+    const betCoins = +args[0];
 
     const userId = message.author.id;
     await game.ensureUser(userId);
@@ -38,7 +41,7 @@ module.exports = {
       solution ? message.channel.send({ embeds: [betTemplate('¡Ganaste!', `Ahora tienes ${newBalance.coins}`)] }) :
         message.channel.send({ embeds: [betTemplate('Perdiste..',`Ahora tienes ${newBalance.coins}`)] });
     } else {
-      return message.channel.send({ embeds: [betTemplate('No tienes monedas suficientes.')] });
+      return message.channel.send({ embeds: [betTemplate('Apuesta', 'No tienes monedas suficientes.')] });
     }
   }
 };

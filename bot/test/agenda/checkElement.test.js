@@ -7,7 +7,7 @@ describe('Test del checkElement', () => {
 
     test('Faltan argumentos', () => {
         const args = ['prueba'];
-        const expectedOutput = 'faltan argumentos';
+        const expectedOutput = '❌ Faltan argumentos';
         checkElement.run(null, messageMock, args);
         expect(messageMock.reply).toHaveBeenCalledTimes(1);
         expect(messageMock.reply).toHaveBeenCalledWith(expectedOutput);

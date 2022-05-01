@@ -45,7 +45,6 @@ const postNewPlayer = async (userId) => {
 
 const updateUserCoins = async ({ userId, coins }) => {
   try{
-    console.log(coins);
     await axios({
       method: 'PUT',
       url: `${base_url}/${userId}`,

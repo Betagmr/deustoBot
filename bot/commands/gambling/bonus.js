@@ -7,7 +7,6 @@ const bonusTemplate = require('../../templates/bonusTemplate');
 const reward = true;
 const bonus = 1000;
 
-
 module.exports = {
   name: 'bonus',
   aliases: ['bon'],
@@ -24,13 +23,13 @@ module.exports = {
 
     const rewardedPlayers = await gamblingService.getRewardedPlayers();
     const rewarded = rewardedPlayers.find(el => el.userId.includes(userId));
-    if (rewarded) message.channel.send({ embeds: [bonusTemplate('Tienes que esperar hasta las 0:0:0 para solicitar de nuevo el bonus.')] });
+    if (rewarded) message.channel.send({ embeds: [bonusTemplate('Tienes que esperar hasta las 00:00 para solicitar de nuevo el bonus.')] });
     if (!rewarded) {
       const userData = await gamblingService.getGamblingPlayer(userId);
       const coins = userData.coins + bonus;
       await gamblingService.updateUserCoins({ userId, coins });
       await gamblingService.updateUserReward({ userId, reward });
-      message.channel.send({ embeds: [bonusTemplate(`Se han añadido 1000 monedas, ahora tienes ${coins} monedas.`)] });
+      message.channel.send({ embeds: [bonusTemplate(`Se han añadido ${bonus} monedas, ahora tienes ${coins} monedas.`)] });
     }
   }
 };

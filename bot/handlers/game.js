@@ -17,11 +17,11 @@ const reward = async ({ userId, coins }, bet, betCoins, win) => {
   }
   if (win) {
     if (bet === 'mid') {
-      coins += betCoins * 5;
+      coins += betCoins * 4;
       await gamblingService.updateUserCoins({ userId, coins });
     }
     else {
-      coins += betCoins * 2;
+      coins += betCoins;
       await gamblingService.updateUserCoins({ userId, coins });
     }
   }

@@ -7,7 +7,7 @@ describe("Test de bet", () => {
 
     test("Faltan argumentos", () => {
         const args = [];
-        const expectedOutput = "No has introducido ningún valor, ni apuesta a ejecutar.";
+        const expectedOutput = "❌ No has introducido ningún valor, ni apuesta a ejecutar.";
         bet.run(null, messageMock, args);
         expect(messageMock.reply).toHaveBeenCalledTimes(1);
         expect(messageMock.reply).toHaveBeenCalledWith(expectedOutput);

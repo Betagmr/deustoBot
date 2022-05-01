@@ -7,7 +7,7 @@ describe('Test del deleteElement', () => {
 
     test('Faltan argumentos', () => {
         const args = ['prueba'];
-        const expectedOutput = 'faltan argumentos';
+        const expectedOutput = '❌ Faltan argumentos';
         deleteElement.run(null, messageMock, args);
         expect(messageMock.reply).toHaveBeenCalledTimes(1);
         expect(messageMock.reply).toHaveBeenCalledWith(expectedOutput);
