@@ -1,4 +1,4 @@
-const reminder = require('../../commands/agenda/checkElement');
+const reminder = require('../../commands/agenda/checkElement.js');
 
 describe('Test del checkElement', () => {
     const messageMock = {

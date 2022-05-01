@@ -1,4 +1,4 @@
-const reminder = require('../../commands/agenda/deleteElement');
+const reminder = require('../../commands/agenda/deleteElement.js');
 
 describe('Test del deleteElement', () => {
     const messageMock = {
