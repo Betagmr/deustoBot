@@ -1,4 +1,4 @@
-const gamblingService = require('../services/gamblingService.js');
+const gamblingService = require('../services/gamblingservice');
 
 const win = (bet) => {
   const n = Math.floor(Math.random() * 20) + 1;
