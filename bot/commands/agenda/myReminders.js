@@ -16,7 +16,7 @@ module.exports = {
 
   run: async (client, message, args) => {
     const reminders = await reminderService.getReminders(message.author.id);
-    console.log(reminders[0].description);
+
     const record = reminders[0].description;
     // if(!reminders) return message.reply("no tienes ningun recordatorio")
 
