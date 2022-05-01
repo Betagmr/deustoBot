@@ -1,4 +1,4 @@
-const reminder = require('../../commands/agenda/deleteElement.js');
+const deleteElement = require('../../commands/agenda/deleteElement');
 
 describe('Test del deleteElement', () => {
     const messageMock = {
@@ -8,7 +8,7 @@ describe('Test del deleteElement', () => {
     test('Faltan argumentos', () => {
         const args = ['prueba'];
         const expectedOutput = 'faltan argumentos';
-        reminder.run(null, messageMock, args);
+        deleteElement.run(null, messageMock, args);
         expect(messageMock.reply).toHaveBeenCalledTimes(1);
         expect(messageMock.reply).toHaveBeenCalledWith(expectedOutput);
     });

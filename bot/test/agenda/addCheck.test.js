@@ -1,4 +1,4 @@
-const reminder = require('../../commands/agenda/addChecklist.js');
+const addCheck = require('../../commands/agenda/addChecklist');
 
 describe('Test del addCheck', () => {
     const messageMock = {
@@ -8,7 +8,7 @@ describe('Test del addCheck', () => {
     test('Faltan argumentos', () => {
         const args = ['prueba'];
         const expectedOutput = 'faltan argumentos';
-        reminder.run(null, messageMock, args);
+        addCheck.run(null, messageMock, args);
         expect(messageMock.reply).toHaveBeenCalledTimes(1);
         expect(messageMock.reply).toHaveBeenCalledWith(expectedOutput);
     });

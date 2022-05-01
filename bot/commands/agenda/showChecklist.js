@@ -1,5 +1,5 @@
-const reminderService = require('../../services/agendaService.js');
-const myChecklistTemplate = require('../../templates/checklistTemplate.js');
+const reminderService = require('../../services/agendaservice');
+const myChecklistTemplate = require('../../templates/checklistTemplate');
 
 const recordStringer = (checklist) => {
   let string = '';

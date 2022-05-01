@@ -1,4 +1,4 @@
-const reminderService = require('../../services/agendaService.js');
+const reminderService = require('../../services/agendaservice');
 
 module.exports = {
   name: 'deleteelement',
