@@ -1,5 +1,5 @@
-const reminderService = require('../../services/agendaService.js');
-const myRemindersTemplate = require('../../templates/myRemindersTemplate.js');
+const reminderService = require('../../services/agendaservice');
+const myRemindersTemplate = require('../../templates/myRemindersTemplate');
 
 const recordStringer = (recordList) => {
   let string = '';
@@ -16,7 +16,7 @@ module.exports = {
 
   run: async (client, message, args) => {
     const reminders = await reminderService.getReminders(message.author.id);
-    console.log(reminders[0].description);
+
     const record = reminders[0].description;
     // if(!reminders) return message.reply("no tienes ningun recordatorio")
 
