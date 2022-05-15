@@ -7,7 +7,7 @@ module.exports = {
   /**
      * @param { Client } client
      * @param { Message } message
-    */
+  */
   run: async (client, message, args) => {
     const target = message.mentions.users.first();
     const mutedRoleid = message.guild.roles.cache.find(r => r.name === 'mute').id;

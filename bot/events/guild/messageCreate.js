@@ -1,4 +1,4 @@
-const config = require(`${process.cwd()}/settings/config`);
+const config = require('../../settings/config');
 
 module.exports = async (client, message) => {
   if (!message.guild || !message.channel || message.author.bot) return;
