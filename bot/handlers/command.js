@@ -1,5 +1,9 @@
 const fs = require('fs');
-
+/**
+ * Carga automaticamente todos los comandos
+ * @module handlers/commands
+ * @param {Client} client Cliente Discord
+*/
 module.exports = (client) => {
   try {
     console.log('Cargando los comandos...'.yellow);

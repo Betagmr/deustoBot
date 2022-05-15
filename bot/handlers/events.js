@@ -1,5 +1,10 @@
 const fs = require('fs');
 
+/**
+ * Carga automaticamente todos los eventos
+ * @module handlers/events
+ * @param {Client} client Cliente Discord
+*/
 module.exports = async (client) => {
   try {
     console.log('Cargando los eventos...'.yellow);

@@ -1,5 +1,10 @@
 const { DisTube } = require('distube');
 
+/**
+ * Modulo de gestion de musica
+ * @module handlers/distube
+ * @param {Client} client Cliente Discord
+ */
 module.exports = (client) => {
   client.distube = new DisTube(client, {
     emitNewSongOnly: false,
@@ -21,6 +26,7 @@ module.exports = (client) => {
     youtubeDL: false,
   });
 
+  /** Activa la opcion de Autoplay */
   client.distube.on('initQueue', queue => {
     queue.autoplay = true;
   });
