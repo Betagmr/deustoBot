@@ -1,6 +1,6 @@
 const { Client, Message } = require('discord.js');
 const game = require('../../handlers/game');
-const gamblingService = require('../../services/gamblingService');
+const gamblingService = require('../../services/gamblingservice');
 const bonusTemplate = require('../../templates/bonusTemplate');
 
 
