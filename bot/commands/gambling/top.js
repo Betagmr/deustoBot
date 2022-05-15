@@ -1,14 +1,20 @@
 const { Client, Message } = require('discord.js');
 const gamblingService = require('../../services/gamblingservice');
 
+/**
+ * @module commands/gambling/top
+ */
 module.exports = {
   name: 'top',
   aliases: ['rank'],
   desc: 'Muestra el top 10 con mas dinero',
   /**
-     * @param { Client } client
+   * Muestra el top 10 con mas dinero
+   *  @param { Client } client
      * @param { Message } message
-  */
+     * @param { Array } args []
+     * @returns { Message } El top 10 con más dinero
+     */
   run: async (client, message, args) => {
     const guild = client.guilds.cache.get(message.guildId);
     const players = await gamblingService.getGamblingPlayers();

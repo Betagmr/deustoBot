@@ -1,7 +1,17 @@
+/**
+ * @module commands/dj/stop
+ */
 module.exports = {
   name: 'stop',
   aliases: ['parar', 'leave'],
   desc: 'Sirve para desconectar al bot',
+  /**
+   * Sirve para desconectar al bot
+   * @param { Client } client
+   * @param { Message } message
+   * @param { Array } args
+   * @returns { Void }
+   */
   run: (client, message, args) => {
     const queue = client.distube.getQueue(message);
     if (!queue) return message.reply('No hay ninguna cancion reproduciendose');

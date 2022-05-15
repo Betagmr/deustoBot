@@ -1,7 +1,17 @@
+/**
+ * @module commands/dj/play
+ */
 module.exports = {
   name: 'play',
   aliases: ['p'],
   desc: 'Sirve para reproducir una cancion',
+  /**
+   * Sirve para reproducir una cancion
+   * @param { Client } client
+   * @param { Message } message
+   * @param { Array } args [Url o Nombre de la cancion]
+   * @returns { void }
+   */
   run: (client, message, args) => {
     if (!args.length) return message.reply('Tienes que especificar el nombre de una cancion.');
     if (!message.member.voice?.channelId) return message.reply('Tienes que estar en un canal de voz.');

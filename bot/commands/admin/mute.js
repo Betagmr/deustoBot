@@ -1,13 +1,18 @@
 const { Client, Message } = require('discord.js');
-
+/**
+* @module commands/admin/mute
+*/
 module.exports = {
   name: 'mute',
   aliases: [],
   desc: 'Sirve para mutear un usuario',
   /**
-     * @param { Client } client
-     * @param { Message } message
-  */
+    *sirve para mutear un usuario
+    * @param { Client } client
+    * @param { Message } message
+    * @param { Array } args [Usuario, Tiempo (ms)]
+    * @returns { Message } Mensaje de confirmación del silencio
+    */
   run: async (client, message, args) => {
     const target = message.mentions.users.first();
     const mutedRoleid = message.guild.roles.cache.find(r => r.name === 'mute').id;

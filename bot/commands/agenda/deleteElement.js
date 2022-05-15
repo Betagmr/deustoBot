@@ -1,10 +1,18 @@
 const reminderService = require('../../services/agendaservice');
-
+/**
+ * @module commands/agenda/deleteElement
+ */
 module.exports = {
   name: 'deleteelement',
   aliases: ['deletech', 'dcheck', 'deletecheck'],
-  desc: 'Sirve para checkear un elemento de una lista (nombre y elemento)',
-
+  desc: 'Sirve para eliminar un elemento de una lista (nombre y elemento)',
+  /**
+   * Sirve para eliminar un elemento de una lista
+   * @param { Client } client
+   * @param { Message} message
+   * @param { Array } args [Nombre Checklist, Numero de elemento]
+   * @returns { Message} Mensaje confirmacion de eliminacion
+   */
   run: async (client, message, args) => {
     if (args.length < 2) return message.reply('❌ Faltan argumentos');
     if (args.length > 2) return message.reply('❌ Sobran argumentos');

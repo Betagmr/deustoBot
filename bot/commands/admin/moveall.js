@@ -1,14 +1,18 @@
 const { Client, Message } = require('discord.js');
-
+/**
+* @module commands/admin/moveAll
+*/
 module.exports = {
   name: 'moveall',
   aliases: ['moveAll', 'ma'],
   desc: 'Mueve a todos los usuarios del server a un canal',
 
   /**
-     * @param { Client } client
-     * @param { Message } message
-     *
+    *Mueve a todos los usuarios del server a un canal
+    * @param { Client } client
+    * @param { Message } message
+    * @param { Array } args [Canal]
+    * @returns { Message } Mensaje de confirmación del movimiento
     */
   run: async (client, message, args) => {
     if (args.length < 1) return message.reply('No has introducido ningun canal');

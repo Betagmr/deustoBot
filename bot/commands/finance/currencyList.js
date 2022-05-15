@@ -1,10 +1,20 @@
 const coinservices = require('../../services/coinservices.js');
 const coinTemplate = require('../../templates/coinTemplate.js');
 
+/**
+ * @module commands/finance/currencyList
+ */
 module.exports = {
   name: 'currencyList',
   aliases: ['addcoin', 'addc'],
   desc: 'Añadir criptomoneda a una lista de seguimiento',
+  /**
+   * Añadir criptomoneda a una lista de seguimiento
+   * @param { Client } client
+   * @param { Message } message
+   * @param { Array } args [Nombre de moneda]
+   * @returns { Message } Confirmacion de que la moneda ha sido añadida a tu lista
+   */
   run: async (client, message, args) => {
     if (args.length < 1) return message.reply('No has puesto ninguna criptomoneda.');
     const currency = await coinservices.getCriptoCurrency(args[0].toLowerCase());

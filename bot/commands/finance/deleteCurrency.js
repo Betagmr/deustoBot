@@ -1,10 +1,20 @@
 const coinservices = require('../../services/coinservices.js');
 const coinTemplate = require('../../templates/coinTemplate.js');
 
+/**
+ * @module commands/finance/deleteCurrency
+ */
 module.exports = {
   name: 'deleteCurrency',
   aliases: ['deleteCoin', 'dc'],
   desc: 'Eliminar criptomoneda de una lista de seguimiento',
+  /**
+   * Eliminar criptomoneda de una lista de seguimiento
+   * @param { Client } client
+   * @param { Message } message
+   * @param { Array } args [Nombre de Moneda]
+   * @returns { Message } Confirmacion de que la moneda ha sido borrada de la lista
+   */
   run: async (client, message, args) => {
     if (args.length < 1) return message.reply('No has puesto ninguna criptomoneda.');
     const currency = await coinservices.getCriptoCurrency(args[0].toLowerCase());

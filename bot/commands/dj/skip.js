@@ -1,7 +1,17 @@
+/**
+ * @module commands/dj/skip
+ */
 module.exports = {
   name: 'skip',
   aliases: ['saltar'],
   desc: 'Sirve para saltar una cancion',
+  /**
+   * Sirve para saltar una cancion
+   * @param { Client } client
+   * @param { Message } message
+   * @param { Array } args []
+   * @returns { Void }
+   */
   run: (client, message, args) => {
     const queue = client.distube.getQueue(message);
     if (!queue) return message.reply('No hay ninguna cancion reproduciendose');

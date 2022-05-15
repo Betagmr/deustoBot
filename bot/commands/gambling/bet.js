@@ -3,15 +3,20 @@ const betTemplate = require('../../templates/betTemplate');
 const game = require('../../handlers/game');
 const { Client, Message } = require('discord.js');
 
+/**
+ * @module commands/gambling/bet
+ */
 module.exports = {
   name: 'bet',
   aliases: ['apostar'],
   desc: 'Crear una apuesta.',
 
   /**
-     * @param { Client } client
+   * Crear una apuesta.
+   *  @param { Client } client
      * @param { Message } message
-     *
+     * @param { Array } args [Cantidad, Apuesta]
+     * @returns { Message } Mensaje de victoria, derrota o de monedas insuficientes
      */
 
   run: async (client, message, args) => {

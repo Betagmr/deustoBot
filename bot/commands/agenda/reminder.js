@@ -1,9 +1,18 @@
 const reminderService = require('../../services/agendaservice');
-
+/**
+ * @module commands/agenda/reminder
+ */
 module.exports = {
   name: 'reminder',
   aliases: ['recordatorio', 'rem', 'rec'],
   desc: 'Sirve para crear un recordatorio (Hora (HH:MM), dia, descripcion)',
+
+  /**
+   * Crear un recordatorio
+   * @param { Client } client
+   * @param { Message } message
+   * @param { Array } args Hora (HH:MM), dia DD/MM/AAAA, descripcion
+   */
 
   run: async (client, message, args) => {
     if(args.length < 3) return message.reply('faltan argumentos');

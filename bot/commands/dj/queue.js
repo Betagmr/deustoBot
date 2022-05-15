@@ -1,7 +1,17 @@
+/**
+ * @module commands/dj/queue
+ */
 module.exports = {
   name: 'queue',
   aliases: ['list'],
   desc: 'Sirve para ver la lista de canciones del bot',
+  /**
+   * Sirve para ver la lista de canciones del bot
+   * @param { Client } client
+   * @param { Message } message
+   * @param { Array } args []
+   * @returns { Message } Lista de canciones para reproducirse
+   */
   run: (client, message, args) => {
     const queue = client.distube.getQueue(message);
     if (!queue) return message.reply('No hay ninguna cancion reproduciendose');

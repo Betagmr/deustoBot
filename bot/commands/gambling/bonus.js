@@ -3,7 +3,9 @@ const game = require('../../handlers/game');
 const gamblingService = require('../../services/gamblingservice');
 const bonusTemplate = require('../../templates/bonusTemplate');
 
-
+/**
+ * @module commands/gambling/bonus
+ */
 const reward = true;
 const bonus = 1000;
 
@@ -13,10 +15,12 @@ module.exports = {
   desc: 'Recibir bonus diario',
 
   /**
-     * @param { Client } client
+   * Recibir bonus diario
+   *  @param { Client } client
      * @param { Message } message
-     *
-    */
+     * @param { Array } args []
+     * @returns { Message } El bonus recibido
+     */
   run: async (client, message, args) => {
     const userId = message.author.id;
     await game.ensureUser(userId);
