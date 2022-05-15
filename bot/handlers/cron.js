@@ -1,5 +1,5 @@
 const CronJob = require('cron').CronJob;
-const gamblingService = require('../services/gamblingService');
+const gamblingService = require('../services/gamblingservice');
 
 const resetRewardJob = new CronJob('0 0 0 * * *', async () => {
   const rewardedPlayers = await gamblingService.getRewardedPlayers();
