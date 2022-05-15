@@ -1,5 +1,14 @@
 const mongoose = require('mongoose');
 
+/**
+ * MongoDB Reminder Schema
+ * @constructor reminderSchema
+ * @param {String} hour Hora del evento
+ * @param {Boolean} date Dia del evento
+ * @param {String} description Descripcion del recordatorio
+ * @param {String} userId Id del usuario
+ * @returns {mongoose.model} reminderSchema
+ */
 const reminderSchema = new mongoose.Schema({
   hour: {
     type: String,

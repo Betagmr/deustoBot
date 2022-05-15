@@ -1,5 +1,12 @@
 const mongoose = require('mongoose');
 
+/**
+ * MongoDB Coin Schema
+ * @constructor coinSchema
+ * @param {String} userId Id del usuario
+ * @param {String} name Nombre de la moneda
+ * @returns {mongoose.model} coinSchema
+ */
 const coinSchema = new mongoose.Schema({
   userId: {
     type: String,
@@ -8,19 +15,7 @@ const coinSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-  }//,
-  // tarjet: {
-  //     type: Number,
-  //     default: 0
-  // },
-  // threshold: {
-  //     type: Boolean,
-  //     default: false
-  // },
-  // reached: {
-  //     type: Boolean,
-  //     default: false,
-  // }
+  }
 });
 
 coinSchema.set('toJSON', {

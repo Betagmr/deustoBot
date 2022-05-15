@@ -1,5 +1,13 @@
 const mongoose = require('mongoose');
 
+/**
+ * MongoDB Gambling Schema
+ * @constructor gamblingSchema
+ * @param {String} userId Id del usuario
+ * @param {Number} coins Cantidad de monedas
+ * @param {Boolean} reward Bono entregado
+ * @returns {mongoose.model} gamblingSchema
+ */
 const gamblingSchema = new mongoose.Schema({
   userId: {
     type: String,

@@ -1,5 +1,14 @@
 const mongoose = require('mongoose');
 
+/**
+ * MongoDB Checklist Schema
+ * @constructor checklistSchema
+ * @param {String} listName Nombre de la lista
+ * @param {String} userId Id del usuario
+ * @param {Boolean} isCheck Selecionado
+ * @param {String} content Contenido de la lista
+ * @returns {mongoose.model} checklistSchema
+ */
 const checklistSchema = new mongoose.Schema({
   listName: {
     type: String,
