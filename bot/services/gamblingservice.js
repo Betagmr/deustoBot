@@ -1,6 +1,7 @@
 const axios = require('axios');
+const config = require('../settings/config');
 
-const base_url = 'http://localhost:3001/api/gambling/';
+const base_url = `${config.BASE_URL}/api/gambling`;
 
 const getGamblingPlayer = async (userId) => {
   const res = await axios({
