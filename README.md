@@ -6,6 +6,7 @@ El proyecto esta basado en una arquitectura cliente-servidor, donde el bot actua
 * Tener y configurar un [cluster de MongoDB](https://www.mongodb.com/es/cloud/atlas/) para la base de datos.
 * Obtener un [token](https://discord.com/developers/docs/intro) valido de un bot de discord.
 * Invitar al BOT al servidor donde se quiera desplegar y darle permisos de administración.
+* (Opcional) Tener instalado [Docker](https://www.docker.com/)
 ## Instrucciones de instalación
 ### Bot
 1. Ejecuta `nmp i` en la consola, dentro del directorio `./bot`
@@ -22,14 +23,18 @@ PREFIX=!
 ```
 PORT=3001
 MONGODB_URI={mongodb_cluster_uri}
+DEV_MONGODB_URI={mongodb_dev_cluster_uri}
 TEST_MONGODB_URI={mongodb_test_cluster_uri}
 ```
 ## Instrucciones de ejecución
+### Node
 Los dos módulos cuentan con 3 scripts a la hora de ser ejecutado:
 * `npm start` ejecuta el módulo en el modo de producción.
 * `npm run dev` ejecuta el módulo en el modo de desarrollo.
 * `npm test` ejecuta los tests del módulo.
-> El modo de **desarrollo** se conecta a la BD de pruebas y renicia de forma automática el bot cada vez que se realiza un cambio en el código.
+> El modo de **desarrollo** se conecta a la BD de desarrollo y renicia de forma automática el bot cada vez que se realiza un cambio en el código.
+### Docker
+Si dispone de docker instalado puede ejecutar el comando `docker-compose up` en la raiz del proyecto para iniciar tanto el bot como el servidor.
 ## Comandos funcionales del bot
 ### Módulo Admin
 Mueve a un canal a los n usuarios mencionados:
