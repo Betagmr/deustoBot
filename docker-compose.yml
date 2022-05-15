@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  server:
+      container_name: server-container
+      restart: always
+      build:
+        context: ./server
+        dockerfile: Dockerfile
+      ports:
+        - "3001:5000"
+
+  bot:
+    container_name: bot-container
+    restart: always
+    build:
+      context: ./bot
+      dockerfile: Dockerfile
+    links:
+      - server
