@@ -9,7 +9,8 @@
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand --forceExit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "bench": "node benchmark/benchmark.js"
+    "bench": "node benchmark/benchmark.js",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +26,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.14.0",
     "jest": "^27.5.1",
+    "jsdoc": "^3.6.10",
     "nodemon": "^2.0.15"
   }
 }
