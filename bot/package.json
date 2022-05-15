@@ -8,7 +8,8 @@
     "dev": "nodemon index.js",
     "test": "jest",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "author": "",
   "license": "",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "eslint": "^8.14.0",
     "jest": "^27.5.1",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "jsdoc": "^3.6.10"
   }
 }
