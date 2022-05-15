@@ -143,3 +143,6 @@ dist
 
 # Backend request
 request
+
+# Auto-generate JSDOC folder
+doc
