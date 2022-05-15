@@ -1,0 +1,31 @@
+{
+    "plugins": [],
+    "recurseDepth": 10,
+    "source": {
+        "include": [
+            "commands/admin",
+            "events",
+            "handlers",
+            "services",
+            "settings",
+            "templates"
+        ],
+        "includePattern": ".+\\.js(docs|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": [
+            "jsdoc",
+            "closure"
+        ]
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "opts": {
+        "destination": "./docs"
+    }
+}
