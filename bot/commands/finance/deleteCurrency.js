@@ -20,12 +20,10 @@ module.exports = {
     const currency = await coinservices.getCriptoCurrency(args[0].toLowerCase());
     const list = await coinservices.getCriptoList(message.author.id);
     const coinTarjet = list.find(c => c.name = args[0]);
-    if(!coinTarjet)return message.reply('La criptomoneda no está incluida en la lista.');
+    if (!coinTarjet) return message.reply('La criptomoneda no está incluida en la lista.');
     const id = coinTarjet.id;
-    currency
-      ? message.channel.send({ embeds: [coinTemplate(currency)] })
-      : message.reply('No se ha encontrado tu criptomoneda.');
-
+    if (!currency) return message.reply('No se ha encontrado tu criptomoneda.');
+    message.channel.send({ embeds: [coinTemplate(currency)] });
     await coinservices.deleteCoin(id);
 
     message.reply(`${args[0]} ha sido borrado de tu lista.`);

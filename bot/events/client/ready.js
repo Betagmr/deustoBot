@@ -13,7 +13,6 @@ module.exports = client => {
 
       reminders.forEach(async (rem) => {
         const member = await guild.members.fetch(rem.userId);
-        console.log(member);
         member.send(rem.description);
       });
 

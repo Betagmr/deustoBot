@@ -29,7 +29,6 @@ const postCoin = async ({ userId, name }) => {
         name
       }
     });
-    console.log('realizada peticion POST');
   }catch(e){
     console.log(e);
   }
@@ -40,7 +39,6 @@ const deleteCoin = async (id) => {
       method: 'DELETE',
       url: `${base_url}/${id}`,
     });
-    console.log('realizada peticion DELETE');
   }catch(e){
     console.log(e);
   }

@@ -36,7 +36,6 @@ const getUpcomingReminders = async () => {
   const yy = date.getFullYear();
 
   const f = (a) => a > 9 ? a : '0' + a;
-  console.log(`${f(dd)}/${f(mm)}/${yy}`);
   return res.data.filter(el => el.date.includes(`${f(dd)}/${f(mm)}/${yy}`));
 };
 

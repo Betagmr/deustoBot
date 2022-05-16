@@ -13,7 +13,6 @@ module.exports = async (url) => {
     url,
     'eng');
 
-  console.log(promise.data.text);
   const elementos = promise.data.text
     .split('\n')
     .map(el => el.match(regex))

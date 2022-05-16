@@ -146,3 +146,6 @@ request
 
 # Auto-generate JSDOC folder
 docs
+
+# Auto-generate benchmark
+benchmarks.html

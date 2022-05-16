@@ -17,7 +17,6 @@ module.exports = {
   run: async (client, message, args) => {
     const userId = message.author.id;
     const list = await coinservices.getCriptoList(userId);
-    console.log(list);
     const currenciesPromise = list.map(e => coinservices.getCriptoCurrency(e.name.toLowerCase()));
     const resolve = await Promise.all(currenciesPromise);
 
