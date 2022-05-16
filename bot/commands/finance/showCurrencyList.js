@@ -17,11 +17,16 @@ module.exports = {
   run: async (client, message, args) => {
     const userId = message.author.id;
     const list = await coinservices.getCriptoList(userId);
+    console.log(list);
     const currenciesPromise = list.map(e => coinservices.getCriptoCurrency(e.name.toLowerCase()));
     const resolve = await Promise.all(currenciesPromise);
 
-    resolve.forEach(e => {
-      message.channel.send({ embeds: [coinTemplate(e)] });
-    });
+    if(resolve.length > 0){
+      resolve.forEach(e => {
+        message.channel.send({ embeds: [coinTemplate(e)] });
+      });
+    }else{
+      message.reply('❌ No tienes cryptos añadidas a la lista.');
+    }
   }
 };
