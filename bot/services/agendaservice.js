@@ -25,6 +25,21 @@ const getReminders = async (userId) => {
   return res.data.filter(el => el.userId.includes(userId));
 };
 
+const getUpcomingReminders = async () => {
+  const res = await axios({
+    method: 'GET',
+    url: base_url_reminder
+  });
+  const date = new Date();
+  const dd = date.getDate();
+  const mm = date.getMonth()+1;
+  const yy = date.getFullYear();
+
+  const f = (a) => a > 9 ? a : '0' + a;
+  console.log(`${f(dd)}/${f(mm)}/${yy}`);
+  return res.data.filter(el => el.date.includes(`${f(dd)}/${f(mm)}/${yy}`));
+};
+
 const postChecklist = async (checklist) => {
   try {
     const res = await axios({
@@ -70,6 +85,7 @@ const deleteChecklist = async (id) => {
 module.exports = {
   postReminder,
   getReminders,
+  getUpcomingReminders,
   postChecklist,
   getChecklist,
   putChecklist,

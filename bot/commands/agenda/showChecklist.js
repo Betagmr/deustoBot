@@ -10,18 +10,10 @@ const myChecklistTemplate = require('../../templates/checklistTemplate');
  * @returns Elementos de checklist en orden en forma de string
  */
 const recordStringer = (checklist) => {
-  let string = '';
-  let n = 1;
-  for (const check of checklist) {
-    if(check.isCheck === false){
-      string += `**${n}**. **${check.content}**\n `;
-    }
-    if(check.isCheck === true){
-      string += `**${n}**. ~~**${check.content}**~~\n `;
-    }
-    n++;
-  }
-  return string;
+  const t = (e) => (e.isCheck) ? '~~' : '';
+  return checklist
+    .map((e,i) => `**${i+1}**. ${t(e)}**${e.content}**${t(e)}`)
+    .join('\n');
 };
 
 module.exports = {
