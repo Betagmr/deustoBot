@@ -21,6 +21,7 @@ module.exports = {
 
   run: async (client, message, args) => {
     const [firstValue] = message.attachments.values();
+    message.reply('Procesando la imagen...');
     try {
       await scan(firstValue.attachment);
     } catch (error) {
@@ -31,7 +32,13 @@ module.exports = {
     const ticket = await scan(firstValue.attachment);
 
     const nombreTicket = args[0];
-    const tarjets = message.mentions.users.map(e => e);
+    console.log(args);
+    const tarjets = args
+      .slice(1, args.length)
+      .filter(e => e.match(/<@[0-9]*>/)[0])
+      .map(e => e.match(/[0-9]*/g)[2])
+      .map(n => message.mentions.users.get(n));
+
     console.log(tarjets);
     const total = ticket.total;
     const precios = ticket.precioProductos.join('\n');
