@@ -10,12 +10,21 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 
 /**
+ * Objeto que contine las diferentes URIs de MongoDB
+ * @type {Object}
+ */
+const MONGODB_URIs = {
+  production: process.env.MONGODB_URI,
+  development: process.env.DEV_MONGODB_URI,
+  test: process.env.TEST_MONGODB_URI
+};
+
+
+/**
  * URI de la BD
  * @type {String}
  */
-const MONGODB_URI = process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test'
-  ? process.env.TEST_MONGODB_URI
-  : process.env.MONGODB_URI;
+const MONGODB_URI = MONGODB_URIs[process.env.NODE_ENV];
 
 /**
  * Contiene las rutas de las diferentes APIs
