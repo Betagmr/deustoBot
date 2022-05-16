@@ -1,7 +1,7 @@
 const axios = require('axios');
 const config = require('../settings/config');
 
-const base_url = `${config.BASE_URL}/api/coins`;
+const base_url = `${config.BASE_URL}/api/coin`;
 
 const getCriptoCurrency = async (coin) => {
   const res = await axios({
@@ -19,12 +19,15 @@ const getCriptoList = async (userId) => {
   return res.data.filter(el => el.userId.includes(userId));
 };
 
-const postCoin = async (coin) => {
+const postCoin = async ({ userId, name }) => {
   try{
     await axios({
       method: 'POST',
       url: base_url,
-      data: coin
+      data: {
+        userId,
+        name
+      }
     });
     console.log('realizada peticion POST');
   }catch(e){
