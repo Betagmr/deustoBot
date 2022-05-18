@@ -32,25 +32,30 @@ Los dos módulos cuentan con 3 scripts a la hora de ser ejecutado:
 * `npm start` ejecuta el módulo en el modo de producción.
 * `npm run dev` ejecuta el módulo en el modo de desarrollo.
 * `npm test` ejecuta los tests del módulo.
+> Debe ejecutar el comando en cada uno de los modulos. \
 > El modo de **desarrollo** se conecta a la BD de desarrollo y renicia de forma automática el bot cada vez que se realiza un cambio en el código.
 ### Docker
 Si dispone de docker instalado puede ejecutar el comando `docker-compose up` en la raiz del proyecto para iniciar tanto el bot como el servidor.
 ## Comandos funcionales del bot
+> Para ejecutar un comando es necesario incorporar el prefijo.\
+> **Estructura**: `{PREFIX}{comando} {args*}` \
+> **Ejemplo**: para `PREFIX = !` -> `!move Bat @Betagmr`
 ### Módulo Admin
-Mueve a un canal a los n usuarios mencionados:
-```
-!m {canal} {@usuario1} {usuario2} {...}
-!move {canal} {@usuario1} {usuario2} {...}
-```
-Mueve a todos los usuarios conectados a un canal:
-```
-!moveAll {canal}
-!ma {canal}
-```
-Silencia al usuario seleccionado por un periodo de tiempo:
-```
-!mute {@usuario} {int: segundos}
-```
+Comandos para la administración del servidor:
+* `move {canal} {@usuario+}`: Mueve a los n usuarios selccionados a un canal expecifico.
+* `moveall {canal}`: Mueve a todos los usuarios conectados a un canal.
+* `mute {@usuario} {int: segundos}`: Silencia al usuario seleccionado por un periodo de tiempo.
+### Módulo Información
+Comandos de informaciòn:
+* `ping`: Muestra el tiempo de retardo de conexión con el bot
+### Módulo Gamblimg
+Comandos para la interaccion con al modulo de juegos:
+* `bet {int: monedas} {up | mid | down}`: Crear una apuesta.
+* `bonus`: Una vez al dia te da una cantidad de monedas.
+* `wallet`: Muestra de cuantas monedas dispones.
+* `top`: Muestra el top 10 con mas dinero.
+____
+Esto hay que quitarlo y ponerlo con el formato de arriba
 ### Módulo Financiero
 Obtener información sobre la criptomoneda seleccionada:
 ```
@@ -90,11 +95,4 @@ Devuelve los recordatorios de los 15 días de un usuario:
 !ma
 !myrem
 !myrec
-```
-### Módulo Información
-Muestra el tiempo de retardo de conexión con el bot:
-```
-!ping
-!latencia
-!ms
 ```
