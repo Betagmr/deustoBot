@@ -54,6 +54,14 @@ Comandos para la interaccion con al modulo de juegos:
 * `bonus`: Una vez al dia te da una cantidad de monedas.
 * `wallet`: Muestra de cuantas monedas dispones.
 * `top`: Muestra el top 10 con mas dinero.
+### Módulo Agenda
+Comandos para la interaccion con al modulo de juegos:
+* `addchecklist {nombre_checklist} {elemento}`: Añade un elemento a una checklist.
+* `checkelement {nombre_checklist} {int: elemento}`: Marca un elemento de la checklist como hecho.
+* `deleteelement {nombre_checklist} {int: elemento}`: Elimina un elemento de la checklist.
+* `showchecklist {nombre_checklist}`: Muestra la checklist seleccionada.
+* `reminder {HH:MM} {DD/MM/AAAA} {recordatorio}`: Crea un recordatorio.
+* `myreminders`: Muestra tus recordatorios.
 ____
 Esto hay que quitarlo y ponerlo con el formato de arriba
 ### Módulo Financiero
@@ -80,19 +88,4 @@ Eliminar una criptomoneda de tu lista de favoritos:
 !deleteCurrency {criptomoneda}
 !deleteCoin {criptomoneda}
 !dc {criptomoneda}
-```
-### Módulo Agenda
-Crea un recordatorio:
-```
-!reminder {HH:MM} {DD/MM/AAAA} {Recordario}
-!recordatorio {HH:MM} {DD/MM/AAAA} {Recordario}
-!rem {HH:MM} {DD/MM/AAAA} {Recordario}
-!rec {HH:MM} {DD/MM/AAAA} {Recordario}
-```
-Devuelve los recordatorios de los 15 días de un usuario:
-```
-!myReminders
-!ma
-!myrem
-!myrec
 ```
