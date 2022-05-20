@@ -33,7 +33,7 @@ Los dos módulos cuentan con 3 scripts a la hora de ser ejecutado:
 * `npm run dev` ejecuta el módulo en el modo de desarrollo.
 * `npm test` ejecuta los tests del módulo.
 > Debe ejecutar el comando en cada uno de los modulos. \
-> El modo de **desarrollo** se conecta a la BD de desarrollo y renicia de forma automática el bot cada vez que se realiza un cambio en el código.
+> El modo de **desarrollo** se conecta a la BD de desarrollo y renicia de forma automática el módulo cada vez que se realiza un cambio en el código.
 ### Docker
 Si dispone de docker instalado puede ejecutar el comando `docker-compose up` en la raiz del proyecto para iniciar tanto el bot como el servidor.
 ## Comandos funcionales del bot
@@ -49,43 +49,36 @@ Comandos para la administración del servidor:
 Comandos de informaciòn:
 * `ping`: Muestra el tiempo de retardo de conexión con el bot
 ### Módulo Gamblimg
-Comandos para la interaccion con al modulo de juegos:
+Comandos para la interaccion con el modulo de juegos:
 * `bet {int: monedas} {up | mid | down}`: Crear una apuesta.
 * `bonus`: Una vez al dia te da una cantidad de monedas.
 * `wallet`: Muestra de cuantas monedas dispones.
 * `top`: Muestra el top 10 con mas dinero.
 ### Módulo Agenda
-Comandos para la interaccion con al modulo de juegos:
+Comandos para la interaccion con la agenda personal:
 * `addchecklist {nombre_checklist} {elemento}`: Añade un elemento a una checklist.
 * `checkelement {nombre_checklist} {int: elemento}`: Marca un elemento de la checklist como hecho.
 * `deleteelement {nombre_checklist} {int: elemento}`: Elimina un elemento de la checklist.
 * `showchecklist {nombre_checklist}`: Muestra la checklist seleccionada.
 * `reminder {HH:MM} {DD/MM/AAAA} {recordatorio}`: Crea un recordatorio.
 * `myreminders`: Muestra tus recordatorios.
-____
-Esto hay que quitarlo y ponerlo con el formato de arriba
 ### Módulo Financiero
-Obtener información sobre la criptomoneda seleccionada:
-```
-!currency {criptomoneda}
-!cy {criptomoneda}
-!crypto {criptomoneda}
-```
-Comparar dos criptomonedas:
-```
-!currencyCompare {criptomoneda1} {criptomoneda2}
-!compare {criptomoneda1} {criptomoneda2}
-!comp {criptomoneda1} {criptomoneda2}
-```
-Añadir una criptomoneda a tu lista de favoritos:
-```
-!currencyList {criptomoneda}
-!addCoin {criptomoneda}
-!addc {criptomoneda}
-```
-Eliminar una criptomoneda de tu lista de favoritos:
-```
-!deleteCurrency {criptomoneda}
-!deleteCoin {criptomoneda}
-!dc {criptomoneda}
-```
+Comandos para la interacción con el modulo financiero:
+* `currency {criptomoneda} {elemento}`: Muestra la informaciòn sobre una criptomoneda.
+* `currencyCompare {criptomoneda1} {criptomoneda2}`: Compara la informaciòn de dos criptomonedas y muestra la ganadora del día.
+* `currencyList {criptomoneda}`: Añade una criptomoneda a tu lista de seguimiento.
+* `deleteCurrency {criptomoneda}`: Elimina la criptomoneda introducida de tu lista de seguimiento.
+* `showCurrencyList`: Muestra la lista de las criptomonedas en seguimiento.
+
+### Módulo Scanner
+Comando para la interacción con el modulo scanner:
+* `scan {nombreTicket} {participantes+}`: Crea un ticket y asigna los productos en orden a los participantes introducidos.
+
+> Es necesario adjuntar una imagen en el mensaje en el que se utilice el comando. \
+> Se podrá interactuar con el ticket mediante los comandos del módulo agenda.
+### Módulo DJ
+Comandos para reproducir música:
+* `play {link | nombre}`: Reproduce una canción.
+* `list`: muestra las canciones que están en la cola de reproducción.
+* `skip`: Salta a la siguiente canción.
+* `stop`: Para la reproducción.
